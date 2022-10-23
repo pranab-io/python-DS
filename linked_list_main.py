@@ -47,7 +47,6 @@ class LL:
         if node_number == 1:
             temp = self.HEAD
             self.HEAD = self.HEAD.next
-            
 
         while count != node_number:
             previous_node = temp
@@ -60,7 +59,6 @@ class LL:
 
         # Now delete the selected node
         previous_node.next = temp.next
-        
 
     # adding a node at n-th poition of the list
 
@@ -75,10 +73,10 @@ class LL:
         """
         temp = self.HEAD
         previous_node = self.HEAD
-        if count!=position-1:
+        if count != position-1:
             temp = temp.next
-            count+=1
-        
+            count += 1
+
         newnode.next = temp.next
         temp.next = newnode
 
@@ -91,6 +89,15 @@ class LL:
             else:
                 print(temp.data)
             temp = temp.next
+
+    def __len__(self):
+        length = 0
+        temp = self.HEAD
+        while temp != None:
+            temp = temp.next
+            length += 1
+
+        return length
 
 
 if __name__ == '__main__':
